@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Course Registration Form</title>
+	
+    <!-- Bootstrap -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>	
+
+	<!-- Style sheet -->
+	<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+<div class="container col-lg-10 col-lg-offset-1">
+  <h1 class="well text-center">Course Registration Form<span style="float: right;" href="#"><img src="images/allstateni.png" alt="Allstate"></span></h1>
+  <div class="row">
+	<div class="col-lg-6 col-lg-offset-3">
+	
+		<form id="registerForm" class="form-horizontal">
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Course Title</label>
+				<div class="col-md-8">
+					<input id="course" value="" type="text" class="form-control" name="course" placeholder="Course Title"/>
+				</div>
+			</div>
+
+<!-- 			<div class="form-group">
+				<label class="col-md-4 control-label">Currently Studying</label>
+				<div class="col-md-8">
+					<input type="text" class="form-control" name="current" placeholder="Currently Studying"/>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-md-4 control-label">University</label>
+				<div class="col-md-8">
+					<input type="text" class="form-control" name="university" placeholder="University"/>
+				</div>
+			</div> -->
+			
+			<div class="form-group">
+				<label class="col-md-4 control-label">First Name</label>
+				<div class="col-md-8">
+					<input type="text" class="form-control" name="fName" placeholder="First Name" >
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-md-4 control-label">Last Name</label>
+				<div class="col-md-8">
+					<input type="text" class="form-control" name="lName" placeholder="Last Name" >
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">City</label>
+				<div class="col-md-8">
+					<input type="text" class="form-control" name="city" placeholder="City" >
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">County</label>
+				<div class="col-md-8">
+					<input type="text" class="form-control" name="county" placeholder="County" >
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Postcode</label>
+				<div class="col-md-8">
+					<input type="text" class="form-control" name="postcode" placeholder="Postcode" >
+				</div>
+			</div>		
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Telephone</label>
+				<div class="col-md-8">
+					<input type="text" pattern="^\d{3} \d{8}$" required class="form-control" name="phone" placeholder="Phone (xxx xxxxxxxx)" >
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Mobile</label>
+				<div class="col-md-8">
+					<input type="text" pattern="^\d{5} \d{3} \d{3}$" required class="form-control" name="mobile" placeholder="Mobile (xxxxx xxx xxx)" >
+				</div>
+			</div>				
+			
+			<div class="form-group">
+				<label class="col-md-4 control-label">Email address</label>
+				<div class="col-md-8">
+					<input type="text" class="form-control" name="email" placeholder="Email address"/>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Gender</label>
+				<div class="col-md-8">
+					<div class="radio">
+						<label><input type="radio" name="gender" value="male" /> Male</label>&nbsp&nbsp
+						<label><input type="radio" name="gender" value="female" /> Female</label>&nbsp&nbsp
+						<label><input type="radio" name="gender" value="other" /> Other</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-offset-4 col-md-8">
+					<button type="submit" style="width:125px; float:left;" class="btn btn-primary" name="submitButton" onClick="registercourse()">Register</button>
+					<button type="submit" style="width:125px; float:right;" class="btn btn-primary" name="backButton" onClick="history.back();return false;">Back to Courses</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+  </div>
+</div>
+
+<script src="js/validator.js">
+
+function registercourse() {
+// We use require directive to load http module and store 
+// the returned HTTP instance into a http variable as follows
+var http = require('http');
+var fs = require('fs');
+
+var path = "Register.txt";
+
+var registered = document.getElementById('javaid').innerHTML;
+
+// Use the fs.open() function to open the file
+// We pass two values into the function and use them as required
+fs.open(path, 'a', function opened(err, fd) 
+ {
+	if (err) 
+	{ 
+	throw err 
+	}				
+		var writeBuffer = new Buffer(registered),
+		bufferPosition = 0,
+		bufferLength = writeBuffer.length, filePosition = null;
+		fs.write( fd,writeBuffer,bufferPosition,bufferLength,filePosition,
+		function wrote(err, written) 
+		{
+			if (err) 
+			{ 
+				throw err; 
+			}
+		console.log('wrote ' + written + ' bytes');
+		});
+});
+};
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
